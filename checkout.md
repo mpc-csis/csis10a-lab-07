@@ -30,7 +30,15 @@ For objects, however, the `==` has a different meaning (it determines if two obj
 >[!NOTE]
 > Strings are a special kind of object in Java. To improve performance and reduce memory usage Java uses string interning. In computer science, string interning is a method of storing only one copy of each distinct string value, which must be immutable. Interning strings makes some string processing tasks more time- or space-efficient at the cost of requiring more time when the string is created or interned. The distinct values are stored in a string intern pool.
 >
-> Because of String interning, using `==` will work similar to primitive types. This is different behavior than EVERY single other object in Java so get in the habit of using the ".equals" method with Strings.
+> Because of String interning, using `==` will work similar to primitive types __in some cases__. This is different behavior than EVERY single other object in Java so get in the habit of using the ".equals" method with Strings.
+> ```java
+> String a = "foo"
+> String b = "foo"
+> String c = new String("foo");
+> a == b; //true
+> a == c; //false
+> a.equals(c); // true
+> ```
 
 ## Shop smart. Shop KowMart
 
